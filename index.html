@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="theme-color" content="#0d1b2a">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tharini Navodya | Portfolio</title>
@@ -99,6 +100,34 @@
         object-fit: cover;
     }
 
+
+    /* --- HOME CONTACT BUTTON --- */
+.home-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #3b82f6; /* Bright blue from your image */
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px; /* Makes it pill-shaped */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.home-contact-btn:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight grow effect */
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.home-contact-btn i {
+    font-size: 20px;
+}
+
     .social-container { 
         background-color: #162435; 
         padding: 30px; 
@@ -160,14 +189,37 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
 }
 
-/* MOBILE FIX */
 @media (max-width: 768px) {
-    /* This puts the Title on top, then the Image, then the Text */
+    /* 1. Hide the menu links but keep the bar */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* 2. Style the top bar for mobile */
+    .navbar {
+        background-color: #0d1b2a !important; /* Matches your dark background */
+        justify-content: center; /* Centers your name */
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+    }
+
+    /* 3. Make your name white and clear on mobile */
+    .navbar .logo {
+        color: white !important;
+        font-size: 20px;
+    }
+
+    /* 4. Adjust the home section so it doesn't hide behind the name */
+    #home {
+        padding-top: 60px !important;
+    }
+
+    /* Keep your existing about section fix */
     .about-container { 
         flex-direction: column-reverse; 
     }
-}
-   
+}   
     /* =========================================
        5. EDUCATION TIMELINE & EXPERIENCE
        ========================================= */
@@ -379,11 +431,14 @@
         <center>
             <p>I'm Tharini Navodya, an Electrical and Electronic Engineering undergraduate from <br>University of Sri Jayawardenepura. I am passionate about exploring Electrical, Electronic, and Software  Engineering to develop innovative solutions for real-world challenges.</p>
         </center>
+
+ <!-- Add the button here -->
+        <a href="#contact" class="home-contact-btn">
+            Contact Me <i class="fas fa-paper-plane"></i>
+        </a>
          <center>
         <div class="social-container" style="margin-top: 35px;">
-    <h2 style="color: white;">Contact Me</h2>
-    <p class="contact-info" style="color: white;">&#9742; <a href="tel:+94710450324" style="color: #add8e6;">+94 71 0450324</a></p>
-    <p class="contact-info" style="color: white;">&#9993; <a href="mailto:tharininavodya48@gmail.com" style="color: #add8e6;">tharininavodya48@gmail.com</a></p>
+    
 
     <!-- Social Media Icons -->
     <div class="social-icons">
