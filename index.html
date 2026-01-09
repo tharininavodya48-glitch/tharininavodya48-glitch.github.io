@@ -128,33 +128,46 @@
     /* =========================================
        4. ABOUT SECTION
        ========================================= */
-    #about { 
-        display: flex; 
-        align-items: center; 
-        gap: 50px; 
-        flex-wrap: wrap; 
-        background: #0d1b2a; 
-    }
+    /* --- ABOUT SECTION --- */
+#about { 
+    background: #0d1b2a; 
+    padding: 100px 10% 60px;
+}
 
-    .about-text { 
-        flex: 1; 
-        min-width: 300px; 
-        text-align: justify; 
-    }
+.about-container {
+    display: flex; 
+    align-items: center; 
+    gap: 50px; 
+    flex-wrap: wrap; 
+}
 
-    .about-image {
-        flex: 1;
-        text-align: center;
-        min-width: 300px;
-    }
+.about-text { 
+    flex: 1; 
+    min-width: 300px; 
+    text-align: justify; 
+}
 
-    .about-image img { 
-        width: 100%; 
-        max-width: 380px; 
-        border-radius: 15px; 
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
-    }
+.about-image {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+}
 
+.about-image img { 
+    width: 100%; 
+    max-width: 380px; 
+    border-radius: 15px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    /* This puts the Title on top, then the Image, then the Text */
+    .about-container { 
+        flex-direction: column-reverse; 
+    }
+}
+   
     /* =========================================
        5. EDUCATION TIMELINE & EXPERIENCE
        ========================================= */
@@ -398,24 +411,29 @@
     
 
     <!-- About -->
-    <section id="about">
+    <!-- About Section -->
+<section id="about">
+    <!-- Move the Title to the very top here -->
+    <h2>About Me</h2>
+    <div class="blue-line"></div>
+
+    <div class="about-container"> <!-- We added this wrapper -->
         <div class="about-text">
-            <h2>About Me</h2>
-            <div class="blue-line"></div>
-             <p style="margin-top: 40px;">
+            <p>
                 I am a third-year Electrical and Electronic Engineering undergraduate at the <span style="color: blue;">University of Sri Jayawardenapura</span>. 
                 I am currently in my 6th Semester and have a huge interest in AI/Machine Learning, Microcontroller-based applications, Signal Processing, Robotics, and Autonomous applications. 
-                <br>I am currently serving as the Head of the Public Visibility Standing Committee of <span style="color: blue;">IEEE WIE</span> of University of Sri Jayawardenapura. 
+                <br><br>I am currently serving as the Head of the Public Visibility Standing Committee of <span style="color: blue;">IEEE WIE</span> of University of Sri Jayawardenapura. 
                 And also the Head of the Finance Crew of Green Hopes project by the Career Skills Development Society(CSDS) of USJ.
                 Also, a committee member of the Delegates Standing Committee of IEEE <span style="color: blue;">Expedition 2.0</span> Event. Additionally, I am a member of the <span style="color: blue;">SEDS J'pura Divisions</span>. 
                 I have also contributed to organizing university events like <span style="color: blue;">Viramayak-2023, Enigma-2024, JESA'25, Heenayata Sawiyak Project</span>, where I was a committee member of the Sponsorship Calling, Social Media Handling, Finance committees.
-                <br>During my free time, I like to explore new places, play Scrabble, and hang out with my friends.
+                <br><br>During my free time, I like to explore new places, play Scrabble, and hang out with my friends.
             </p>
         </div>
         <div class="about-image">
             <img src="Image03.jpg" alt="Profile Picture">
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Education Section (Includes Timeline, Certs, and Skills) -->
     <section id="education">
