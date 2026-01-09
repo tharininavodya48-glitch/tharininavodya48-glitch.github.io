@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharini Navodya | Portfolio</title>
+    
+    <!-- Icon Library for Social Media and UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL STYLES --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background-color: #0d1b2a; /* Dark background like your images */
+            color: white; 
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION (Order Updated: Home, About, Education, Projects, Contact) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 5%;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo { color: #0d1b2a; font-size: 22px; font-weight: bold; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a {
+            text-decoration: none;
+            color: #0d1b2a;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: #ff6600; }
+
+        /* --- SECTION SETTINGS --- */
+        section { padding: 100px 10% 60px; }
+        h1, h2 { text-align: center; margin-bottom: 20px; }
+        .blue-line { width: 50px; height: 4px; background: #3b82f6; margin: 10px auto 40px; border-radius: 2px; }
+
+        /* --- HOME SECTION --- */
+        #home { text-align: center; background: #1b263b; }
+        .profile-img { width: 200px; border-radius: 50%; border: 5px solid #415a77; margin-bottom: 20px; }
+
+        /* --- ABOUT SECTION --- */
+        #about { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; background: #0d1b2a; }
+        .about-text { flex: 1; min-width: 300px; text-align: justify; font-size: 18px; }
+        .about-image img { width: 100%; max-width: 350px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .social-icons {
+    display: flex;
+    /* Specific colors for visibility */
+.fa-linkedin-in { color: #0077b5; font-size: 35px; }
+.fa-facebook-f  { color: #1877f2; font-size: 35px; }
+.fa-github      { color: #ffffff; font-size: 35px; }
+    justify-content: center;
+    gap: 40px; /* Increase this number for more space */
+    margin-top: 20px;
+}
+        /* --- EDUCATION TIMELINE (Like Pic 1) --- */
+        #education { background: #1b263b; }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute; left: 0; top: 0; width: 4px; height: 100%;
+            background: #3b82f6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: #0d1b2a;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3b82f6;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute; left: -48px; top: 20px; width: 16px; height: 16px;
+            background: #3b82f6; border-radius: 50%; border: 4px solid #1b263b;
+        }
+        .timeline-item h3 { text-align: left; margin-bottom: 5px; font-size: 18px; }
+        .timeline-item p { color: #a2aebb; font-size: 14px; }
+
+        /* --- PROJECTS PLACEHOLDER --- */
+        #projects { background: #0d1b2a; text-align: center; }
+
+        /* --- CERTIFICATIONS (Like Pic 2) --- */
+        .cert-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #0d1b2a;
+            padding: 30px;
+            border-radius: 15px;
+            list-style: none;
+        }
+        .cert-list li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 16px;
+            text-align: left;
+        }
+        .cert-list li::before {
+            content: '\f058'; /* FontAwesome check circle */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute; left: 0; color: #3b82f6;
+        }
+
+        /* --- EXPERIENCE SECTION --- */
+#experience { background: #0d1b2a; }
+
+.experience-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.exp-card {
+    background: #1b263b;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 5px solid #3b82f6;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.exp-card:hover {
+    transform: translateX(10px);
+    background: #25334b;
+}
+
+.exp-card h3 {
+    text-align: left;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 19px;
+}
+
+.exp-card h4 {
+    color: #3b82f6;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.exp-card p {
+    color: #a2aebb;
+    font-size: 14px;
+}
+
+        /* --- SKILLS GRID (Like Pic 3 & 4) --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill-card {
+            background: #3b82f6;
+            width: 250px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .skill-header {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        .skill-content {
+            display: none;
+            background: #1b263b;
+            padding: 15px;
+            list-style: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: left;
+        }
+        .skill-card:hover .skill-content { display: block; }
+        .skill-content li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .skill-content li::before {
+            content: '\f00c'; /* Checkmark */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute; left: 0; color: #3b82f6;
+        }
+
+/* --- PROJECTS SECTION --- */
+#projects {
+    background-color: #0d1b2a;
+    padding: 100px 10% 60px;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #1b263b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    background-color: #0d1b2a; /* Placeholder color if no image */
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #3b82f6;
+    font-size: 20px;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: #a2aebb;
+    margin-bottom: 15px;
+}
+
+/* Technical Tags/Chips */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+        /* --- CONTACT SECTION (3-BOX LAYOUT) --- */
+#contact {
+    background-color: #0d1b2a; /* Dark background */
+    padding: 100px 10% 60px;
+    text-align: center;
+    scroll-margin-top: 80px; /* Prevents navbar from covering the title */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allows boxes to stack on small screens */
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: #162435; /* Darker box background */
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 40px 20px;
+    border-radius: 12px;
+    border-top: 5px solid #3b82f6; /* The distinct blue top border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-card i {
+    font-size: 40px;
+    color: #3b82f6; /* Blue icon color */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.contact-card h3 {
+    color: #3b82f6; /* Blue label color */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #ffffff; /* White value color */
+    font-size: 16px;
+    word-break: break-all;
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: #0d1b2a; /* Dark blue background */
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top line */
+}
+
+.footer-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #90e0ef; /* Light blue color for the name */
+    margin-bottom: 5px;
+}
+
+.footer-tagline {
+    font-size: 16px;
+    color: #a2aebb;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.footer-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent circles */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6; /* Blue icon color */
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.footer-icon:hover {
+    background-color: #3b82f6;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.copyright {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (3rd is Education, 4th is Projects) -->
+    <nav class="navbar">
+        <div class="logo">Tharini Navodya</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <img src="Image02.jpg" class="profile-img" alt="Tharini Navodya">
+        <center>
+            <p>I'm Tharini Navodya, an Electrical and Electronic Engineering undergraduate from <br>University of Sri Jayawardenepura. I am passionate about exploring Electrical, Electronic, and Software  Engineering to develop innovative solutions for real-world challenges.</p>
+        </center>
+         <center>
+        <div class="social-container" style="margin-top: 35px;">
+    <h2 style="color: white;">Contact Me</h2>
+    <p class="contact-info" style="color: white;">&#9742; <a href="tel:+94710450324" style="color: #add8e6;">+94 71 0450324</a></p>
+    <p class="contact-info" style="color: white;">&#9993; <a href="mailto:tharininavodya48@gmail.com" style="color: #add8e6;">tharininavodya48@gmail.com</a></p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/tharini-jayarathna-439a872ba" target="_blank" class="icon-link">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/tharini.navodya.2025?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" class="icon-link">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/tharininavodya48-glitch" target="_blank" class="icon-link">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</div>
+       
+        </center>
+
+    </section>
+
+    
+
+    <!-- About -->
+    <section id="about">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <div class="blue-line"></div>
+             <p style="margin-top: 40px;">
+                I am a third-year Electrical and Electronic Engineering undergraduate at the <span style="color: blue;">University of Sri Jayawardenapura</span>. 
+                I am currently in my 6th Semester and have a huge interest in AI/Machine Learning, Microcontroller-based applications, Signal Processing, Robotics, and Autonomous applications. 
+                <br>I am currently serving as the Head of the Public Visibility Standing Committee of <span style="color: blue;">IEEE WIE</span> of University of Sri Jayawardenapura. 
+                And also the Head of the Finance Crew of Green Hopes project by the Career Skills Development Society(CSDS) of USJ.
+                Also, a committee member of the Delegates Standing Committee of IEEE <span style="color: blue;">Expedition 2.0</span> Event. Additionally, I am a member of the <span style="color: blue;">SEDS J'pura Divisions</span>. 
+                I have also contributed to organizing university events like <span style="color: blue;">Viramayak-2023, Enigma-2024, JESA'25, Heenayata Sawiyak Project</span>, where I was a committee member of the Sponsorship Calling, Social Media Handling, Finance committees.
+                <br>During my free time, I like to explore new places, play Scrabble, and hang out with my friends.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="Image03.jpg" alt="Profile Picture">
+        </div>
+    </section>
+
+    <!-- Education Section (Includes Timeline, Certs, and Skills) -->
+    <section id="education">
+        <h2>🎓 Education</h2>
+        <div class="blue-line"></div>
+        
+        <!-- Timeline Boxes -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>B.Sc. Engineering (Hons) in Electrical and Electronic Engineering</h3>
+                <p>University of Sri Jayewardenepura, Gangodawila, Sri Lanka</p>
+                <p><b>Feb 2023 - Present</b></p>
+            </div>
+            <div class="timeline-item">
+                <h3>GCE Advanced Level - Physical Science Stream</h3>
+                <p>Sanghamitta Balika Vidyalaya, Galle, Sri Lanka<br>Z-Score: 1.8335<br>Combined Mathematics, Physics, Chemistry</p>
+                <p><b>April 2007 - Jan 2020</b></p>
+            </div>
+            <div class="timeline-item">
+                <h3>GCE Ordinary Level (9A's)</h3>
+                <p>Sanghamitta Balika Vidyalaya, Galle, Sri Lanka<br>Basket Subjects: Tamil, Western music, Health and Physical Education</p>
+                <p><b>2007 - 2020</b></p>
+            </div>
+        </div>
+
+        <!-- Online Certifications & Courses (Now under Education Boxes) -->
+        <div style="margin-top: 60px;">
+            <h2>📚 Online Certifications & Courses</h2>
+            <div class="blue-line"></div>
+            <ul class="cert-list">
+                <li>AI/ML Engineer- Stage 1 - SLIIT</li>
+                <li>Digital Signal Processing 1: Basic Concepts and Algorithms - Coursera</li>
+                <li>Supervised Machine Learning: Regression and Classification - Coursera</li>
+                <li>Matlab onramp - MATLAB Coding</li>
+                <li>Python for Data Science, AI & Development - IBM</li>
+                <li>C++ Basic Structures: Vectors, Pointers, Strings and Files - Coursera</li>
+                <li>C++ Basics: Selection and Iteration - Coursera</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+<section id="experience">
+    <h2>💼 Working & Volunteer Experience</h2>
+    <div class="blue-line"></div>
+    
+    <div class="experience-list">
+        <!-- Item 1 -->
+        <div class="exp-card">
+            <h3>Finance Crew Member - JESA'25</h3>
+            <h4>Career Skills Development Society (CSDS) - USJ</h4>
+            <p>Aug 2025 - Present</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="exp-card">
+            <h3>Finance Crew Head - Green Hopes Project</h3>
+            <h4>Career Skills Development Society (CSDS) - USJ</h4>
+            <p>Jul 2025 - Present</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="exp-card">
+            <h3>Head of Public Visibility Standing Committee</h3>
+            <h4>IEEE WIE Student Branch Affinity Group - USJ</h4>
+            <p>Mar 2025 - Present</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="exp-card">
+            <h3>Finance Crew Member - Heenayata Sawiyak 2.0</h3>
+            <h4>IEEE Student Branch - USJ</h4>
+            <p>Jul 2025 - Oct 2025</p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="exp-card">
+            <h3>Delegates Crew Member - J'pura Expedition 2.0</h3>
+            <h4>IEEE Student Branch - USJ</h4>
+            <p>Feb 2025 - May 2025</p>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="exp-card">
+            <h3>Member</h3>
+            <h4>SEDS J'pura</h4>
+            <p>May 2024 - Apr 2025</p>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="exp-card">
+            <h3>Member</h3>
+            <h4>Sasnaka Sansada Foundation</h4>
+            <p>May 2022 - Feb 2023</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Skills (Now under Certifications in Education Column) -->
+        <div style="margin-top: 60px;">
+            <h2>Skills</h2>
+            <div class="blue-line"></div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header"><span>👩‍💻 Languages</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>English (Professional Proficiency)</li>
+                        <li>Sinhala (Native Proficiency)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-header"><span>💻 Computer Languages</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>Python</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-header"><span>🔧 Design and Simulation Software</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>PCB Designing (KiCad)</li>
+                        <li>3D designing (AutoCAD)</li>
+                        <li>MATLAB</li>
+                        <li>Simulink</li>
+                        <li>PSCAD</li>
+                        <li>LTspice</li>
+
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header"><span>🛠 Productivity and Media Tools</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>MS Office</li>
+                        <li>Social Media Management</li>
+                        <li>Vedio and photo editing (CANVA)</li>
+                    </ul>
+                </div>
+ 
+                 <div class="skill-card">
+                    <div class="skill-header"><span>💡 Lighting Design Software</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>DIALux Evo</li>
+                     
+                    </ul>
+                </div>
+
+                  <div class="skill-card">
+                    <div class="skill-header"><span>⚙️ Frameworks & Embedded Systems</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>PyTorch</li>
+                         <li>OpenCV</li>
+                        <li>TensorFlow</li>
+                     
+                    </ul>
+                </div>
+
+
+
+               
+                
+                <div class="skill-card">
+                    <div class="skill-header"><span>🤝 Soft Skills</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li>Teamwork & Leadership</li>
+                        <li>Effective Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Decision Making</li>
+                        <li>Adaptabilty</li>                        
+                    </ul>
+                </div>
+
+                 <div class="skill-card">
+                    <div class="skill-header"><span>🏅 Sports</span><i class="fas fa-chevron-down"></i></div>
+                    <ul class="skill-content">
+                        <li> Scrabble (Provincial Championship and All-Island Rankings)</li>
+                        <li> Cricket</li>
+                        <li> Badminton</li>
+                     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects">
+    <h2>🚀 Projects</h2>
+    <div class="blue-line"></div>
+
+<div class="projects-grid">
+
+    <!-- Project 1: Micromouse Robot -->
+<div class="project-card">
+    <img src="micromouse.jpeg" alt="Micromouse Robot ROBOFEST 2025" class="project-img">
+    <div class="project-info">
+        <h3>Micromouse Robot | ROBOFEST 2025</h3>
+        <p>
+            An autonomous maze-solving robot designed for the Micromouse challenge. 
+            Features an <b>ESP32</b> for real-time decision making, <b>PID-based wall following</b>, 
+            and the <b>Flood Fill algorithm</b> for intelligent mapping and path planning. 
+            Integrated MPU6050 gyroscope and IR sensors for precise navigation.
+        </p>
+        <div class="project-tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">Flood Fill Algorithm</span>
+            <span class="tag">PID Control</span>
+            <span class="tag">MPU6050</span>
+            <span class="tag">Sensor Fusion</span>
+            <span class="tag">C++</span>
+        </div>
+<!-- Link to GitHub since you provided it -->
+        <a href="https://github.com/tharininavodya48-glitch/Micromouse-Autonomous-Robot" target="_blank" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: bold;">
+            <i class="fab fa-github"></i> View Repository
+        </a>
+
+    </div>
+</div>
+    
+    
+          <!-- Project 2: STM32 Measurement System -->
+<div class="project-card">
+    <img src="stm.jpeg" alt="STM32 Precision Measurement System" class="project-img">
+    <div class="project-info">
+        <h3>Ultra-Precision Measurement System | STM32</h3>
+        <p>
+            Developed for the EE2208 Embedded Systems module, this system measures currents (1µA - 100mA) and voltages (1V - 12V) with minimal impact on the test circuit. 
+            Features <b>polynomial calibration</b> for ultra-accuracy, <b>interrupt-driven firmware</b> for performance, and real-time visualization on an <b>OLED display</b> via I2C.
+        </p>
+        <div class="project-tags">
+            <span class="tag">STM32</span>
+            <span class="tag">I2C & UART</span>
+            <span class="tag">Polynomial Calibration</span>
+            <span class="tag">Op-Amp Circuitry</span>
+            <span class="tag">Embedded C</span>
+            <span class="tag">OLED Interfacing</span>
+        </div>
+
+    </div>
+</div>
+      
+        <!-- Project 3: Vehicle Tracking & Counting -->
+<div class="project-card">
+    <img src="vehicletracking.jpeg" alt="YOLOv8 Vehicle Tracking" class="project-img">
+    <div class="project-info">
+        <h3>Real-Time Vehicle Tracking & Counting | YOLOv8</h3>
+        <p>
+            Developed a high-speed computer vision system using <b>YOLOv8n</b> and <b>OpenCV</b>. 
+            Features multi-object detection, color-coded ID tracking, and trail visualization. 
+            The system handles flickering and occlusions with stable label persistence, enabling accurate real-time classification for traffic monitoring.
+        </p>
+        <div class="project-tags">
+            <span class="tag">YOLOv8</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Python</span>
+        </div>
+        <!-- Link to GitHub since you provided it -->
+        <a href="https://github.com/tharininavodya48-glitch/Vehicle-Tracking-YOLOv8" target="_blank" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: bold;">
+            <i class="fab fa-github"></i> View Repository
+        </a>
+    </div>
+</div>
+
+<!-- Project 4: Smart Waste Segregation System -->
+<div class="project-card">
+    <img src="smartdustbin.jpeg" alt="Smart Waste Segregation System" class="project-img">
+    <div class="project-info">
+        <h3>Smart Waste Segregation System | AI & Robotics</h3>
+        <p>
+            A fully automated end-to-end sorting system integrating <b>YOLOv8</b> with <b>Arduino Uno</b>. 
+            Features an ultrasonic "wake-up" logic for energy efficiency and a custom <b>PyQt6</b> dashboard for real-time monitoring. 
+            Solved complex hardware-software integration challenges using virtual serial bridges and a custom "Cooldown & Buffer Flush" protocol.
+        </p>
+        <div class="project-tags">
+            <span class="tag">YOLOv8</span>
+            <span class="tag">Arduino Uno</span>
+            <span class="tag">Python (PyQt6)</span>
+            <span class="tag">Proteus Simulation</span>
+            <span class="tag">Serial Communication</span>
+        </div>
+        <!-- GitHub Link -->
+        <a href="https://github.com/tharininavodya48-glitch/Smart-Dustbin-IoT" target="_blank" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: bold;">
+            <i class="fab fa-github"></i> View Repository
+        </a>
+    </div>
+</div>
+
+<!-- Project 5: Micromouse PCB Design -->
+<div class="project-card">
+    <img src="pcb.jpeg" alt="Micromouse PCB Design" class="project-img">
+    <div class="project-info">
+        <h3>Micromouse Motherboard | Custom PCB Design</h3>
+        <p>
+            Designed a custom D-shaped central motherboard using <b>KiCad</b> to replace jumper wires with a professional <b>Modular Carrier Architecture</b>. 
+            Integrated an ESP32, TB6612FNG driver, and MP1584 regulators. Developed <b>custom schematic symbols and footprints</b> to ensure precise mechanical fit and optimal sensor alignment for maze navigation.
+        </p>
+        <div class="project-tags">
+            <span class="tag">KiCad</span>
+            <span class="tag">PCB Design</span>
+            <span class="tag">Hardware Engineering</span>
+            <span class="tag">Footprint Design</span>
+            <span class="tag">3D Rendering</span>
+        </div>
+       
+    </div>
+</div>
+  
+
+<!-- Project 6: AgroMind AI Agriculture Platform -->
+<div class="project-card">
+    <img src="agromindapp.jpeg" alt="AgroMind AI Smart Farming" class="project-img">
+    <div class="project-info">
+        <h3>AgroMind | AI-Powered Smart Farming</h3>
+        <p>
+            A full-stack smart farming application designed to empower farmers with data-driven insights. 
+            Features a <b>React/Next.js</b> frontend with a <b>FastAPI</b> backend. Includes an <b>AI Agronomist chatbot</b> for pest advice, 
+            real-time yield dashboards using <b>Recharts</b>, and interactive educational modules for precision agriculture.
+        </p>
+        <div class="project-tags">
+            <span class="tag">React / Next.js</span>
+            <span class="tag">FastAPI (Python)</span>
+            <span class="tag">AI / NLP</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Full-Stack</span>
+        </div>
+        <a href="https://github.com/tharininavodya48-glitch/AgroMind" target="_blank" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: bold;">
+            <i class="fab fa-github"></i> View Repository
+        </a>
+    </div>
+</div>
+
+<!-- Project 7: Driver Drowsiness & Distraction Monitoring -->
+<div class="project-card">
+    <img src="drowsiness.jpeg" alt="Driver Drowsiness Monitoring System" class="project-img">
+    <div class="project-info">
+        <h3>Driver Safety Co-Pilot | AI & HMI</h3>
+        <p>
+            An industrial-grade safety system implementing the <b>PERCLOS Algorithm</b> for fatigue detection. 
+            Features multi-stage HMI voice alerts, <b>MPU-based head tracking</b>, and real-time night-vision processing using <b>CLAHE</b>. 
+            Includes an adaptive risk score engine that tracks cumulative fatigue to prevent micro-sleeps and "sneaky" distractions.
+        </p>
+        <div class="project-tags">
+            <span class="tag">OpenCV</span>
+            <span class="tag">PERCLOS Algorithm</span>
+            <span class="tag">Iris Tracking</span>
+            <span class="tag">CLAHE (Image Processing)</span>
+            <span class="tag">HMI Design</span>
+        </div>
+        <a href="https://github.com/tharininavodya48-glitch/Driver-Safety-System" target="_blank" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: bold;">
+            <i class="fab fa-github"></i> View Repository
+        </a>
+    </div>
+</div>
+</section>
+
+
+    <!-- Final Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="blue-line"></div>
+    <p style="color: #a2aebb; margin-bottom: 40px;">Feel free to reach out to me for any inquiries.</p>
+
+    <div class="contact-container">
+        <!-- Email Box -->
+        <a href="mailto:tharininavodya48@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>tharininavodya48@gmail.com</p>
+        </a>
+
+        <!-- WhatsApp Box -->
+        <a href="https://wa.me/94710450324" target="_blank" class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <p>+94710450324</p>
+        </a>
+
+        <!-- Call Me Box -->
+        <a href="tel:+94710450324" class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Call Me</h3>
+            <p>+94710450324</p>
+        </a>
+    </div>
+    
+   
+    </section>
+
+</body>
+
+<footer>
+    <div class="footer-name">Tharini Navodya</div>
+    <div class="footer-tagline">Electrical and Electronic Engineering Undergraduate</div>
+
+    <div class="footer-socials">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/tharini-jayarathna-439a872ba" target="_blank" class="footer-icon">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com/tharini.navodya.2025" target="_blank" class="footer-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/tharininavodya48-glitch" target="_blank" class="footer-icon">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+
+    <div class="copyright">
+        &copy; 2026 Tharini Navodya.<br>
+        All rights reserved.
+    </div>
+</footer>
+</html>
