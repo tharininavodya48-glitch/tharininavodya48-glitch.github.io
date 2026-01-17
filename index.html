@@ -347,6 +347,17 @@
         font-weight: bold; border: 1px solid rgba(59, 130, 246, 0.3); 
     }
 
+    .project-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: rgba(59, 130, 246, 0.5); /* Semi-transparent blue */
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
     /* =========================================
        8. CONTACT SECTION (3-BOX)
        ========================================= */
@@ -892,6 +903,35 @@
             <i class="fab fa-github"></i> View Repository
         </a>
     </div>
+
+    <!-- Project 10: Adaptive Modulation & Power Control (Ongoing) -->
+<div class="project-card">
+    <div style="position: relative;">
+        <!-- Technical Icon Placeholder instead of <img> -->
+        <div class="project-placeholder">
+            <i class="fas fa-wave-square"></i> <!-- A signal wave icon -->
+        </div>
+        
+        <!-- Ongoing Badge -->
+        <span style="position: absolute; top: 10px; right: 10px; background: #ff6600; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+            <i class="fas fa-spinner fa-spin"></i> Ongoing
+        </span>
+    </div>
+    <div class="project-info">
+        <h3>Adaptive Modulation & Power Control | ML</h3>
+        <p>
+            An ongoing research project focused on <b>Automatic Modulation Recognition (AMR)</b> using Machine Learning. 
+            Simulating wireless channels to evaluate performance through <b>SNR and Bit Error Rate (BER)</b> metrics. 
+            Aiming to implement real-time adaptive modulation to optimize power efficiency in digital communication.
+        </p>
+        <div class="project-tags">
+            <span class="tag">Digital Communication</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">SNR/BER Analysis</span>
+            <span class="tag">Wireless Simulation</span>
+        </div>
+    </div>
+</div>
 </div>
 
 </section>
@@ -965,6 +1005,7 @@
     });
 </script>
 </html>
+
 
 
 
